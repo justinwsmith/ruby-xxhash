@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'xxHash/version'
+require 'xxhash/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ruby-xxHash"
   spec.version       = XXhash::VERSION
   spec.authors       = ["Justin W Smith"]
   spec.email         = ["justin.w.smith@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{A pure Ruby implementation of xxhash.}
+  spec.summary       = %q{A pure Ruby implementation of xxhash.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
