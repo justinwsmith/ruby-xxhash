@@ -1,4 +1,4 @@
-require "xxhash/version"
+require "ruby-xxhash/version"
 
 class XXhash
   @@mem_total_size = 16
