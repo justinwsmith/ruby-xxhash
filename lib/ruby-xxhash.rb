@@ -16,7 +16,7 @@ class XXhash
     xxh.sum32
   end
 
-  def XXhash.xxh32_stream(io, seed = 0, chunk = 1024)
+  def XXhash.xxh32_stream(io, seed = 0, chunk = 32)
     xxh = XXhash.new(seed)
 
     while(data = io.read(chunk))
