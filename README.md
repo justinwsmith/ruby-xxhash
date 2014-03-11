@@ -1,6 +1,8 @@
-# Ruby::XxHash
+# XXhash
 
-TODO: Write a gem description
+This gem provides a pure Ruby implementation of the XXhash32 hashing algorithm described here: https://code.google.com/p/xxhash/.
+
+It's intended to be source compatible with the Gem provided by nashby: https://github.com/nashby/xxhash
 
 ## Installation
 
@@ -18,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'xxhash'
+
+text = "test"
+seed = 12345
+
+XXhash.xxh32(text, seed) # => 3834992036
+```
 
 ## Contributing
 

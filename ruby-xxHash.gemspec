@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["justin.w.smith@gmail.com"]
   spec.description   = %q{A pure Ruby implementation of xxhash.}
   spec.summary       = %q{A pure Ruby implementation of xxhash.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/justinwsmith/ruby-xxhash"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
