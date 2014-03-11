@@ -2,7 +2,7 @@
 
 This gem provides a pure Ruby implementation of the XXhash32 hashing algorithm described here: https://code.google.com/p/xxhash/.
 
-It's intended to be source compatible with the Gem provided by nashby: https://github.com/nashby/xxhash
+It's intended to be (mostly) source compatible with the Gem provided by nashby: https://github.com/nashby/xxhash
 
 ## Installation
 
@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-require 'xxhash'
+require 'ruby-xxhash'
 
 text = "test"
 seed = 12345
