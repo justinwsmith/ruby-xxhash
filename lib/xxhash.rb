@@ -1,12 +1,12 @@
 require "xxhash/version"
 
 class XXhash
-	@@mem_total_size = 16
-	@@prime32_1 = 2654435761
-	@@prime32_2 = 2246822519
-	@@prime32_3 = 3266489917
-	@@prime32_4 = 668265263
-	@@prime32_5 = 374761393
+  @@mem_total_size = 16
+  @@prime32_1 = 2654435761
+  @@prime32_2 = 2246822519
+  @@prime32_3 = 3266489917
+  @@prime32_4 = 668265263
+  @@prime32_5 = 374761393
 
   @@thirtytwo1s = (2**32-1)
 
@@ -43,41 +43,41 @@ class XXhash
       bytes = bytes.unpack("C*")
     end
 
-   @total_len += bytes.length
+    @total_len += bytes.length
 
-   p = 0
+    p = 0
 
-   while (remaining = (bytes.length - p)) > 0
+    while (remaining = (bytes.length - p)) > 0
 
-    mem_avail = @@mem_total_size - @memsize
+      mem_avail = @@mem_total_size - @memsize
 
-    if(remaining < mem_avail)
-     @memory[@memsize, remaining] = bytes[p, remaining]
-     @memsize += remaining
-     break
-   end
+      if(remaining < mem_avail)
+       @memory[@memsize, remaining] = bytes[p, remaining]
+       @memsize += remaining
+       break
+     end
 
-   @memory[@memsize, mem_avail] = bytes[p, mem_avail]
+     @memory[@memsize, mem_avail] = bytes[p, mem_avail]
 
-   i = 0
-   [:v1, :v2, :v3, :v4].each do |m|
-    p32 = uint32(
-      @memory[i] |
-      (@memory[i+1] << 8) |
-      (@memory[i+2] << 16) |
-      (@memory[i+3] << 24))
+     i = 0
+     [:v1, :v2, :v3, :v4].each do |m|
+      p32 = uint32(
+        @memory[i] |
+        (@memory[i+1] << 8) |
+        (@memory[i+2] << 16) |
+        (@memory[i+3] << 24))
 
-    v = uint32(self.send(m) + p32 * @@prime32_2)
-    v = uint32(uint32((v << 13) | (v >> (32 - 13))) * @@prime32_1)
-    self.send((m.to_s + "=").to_sym, v)
-    i += 4
+      v = uint32(self.send(m) + p32 * @@prime32_2)
+      v = uint32(uint32((v << 13) | (v >> (32 - 13))) * @@prime32_1)
+      self.send((m.to_s + "=").to_sym, v)
+      i += 4
+    end
+
+    p += mem_avail
+    @memsize = 0
   end
 
-  p += mem_avail
-  @memsize = 0
-end
-
-return true
+  return true
 end
 
 def sum32
@@ -120,9 +120,9 @@ end
 
 private
 
-  attr_accessor :v1, :v2, :v3, :v4
+attr_accessor :v1, :v2, :v3, :v4
 
-  def uint32(x)
-    x & @@thirtytwo1s
-  end
+def uint32(x)
+  x & @@thirtytwo1s
+end
 end
