@@ -1,4 +1,5 @@
 #Copyright (c) 2012 Vasiliy Ermolovich
+#Copyright (c) 2014 Justin W Smith
 
 require 'spec_helper'
 require 'stringio'
