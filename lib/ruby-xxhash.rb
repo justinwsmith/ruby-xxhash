@@ -1,3 +1,5 @@
+# Copyright 2014 Justin W. Smith
+
 require "ruby-xxhash/version"
 
 class XXhash
