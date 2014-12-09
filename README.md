@@ -1,6 +1,6 @@
 # XXhash
 
-This gem provides a pure Ruby implementation of the XXhash32 hashing algorithm described here: https://code.google.com/p/xxhash/.
+This gem provides a pure Ruby implementation of the XXhash32 and XXhash64 hashing algorithms described here: https://code.google.com/p/xxhash/.
 
 It's intended to be (mostly) source compatible with the Gem provided by nashby: https://github.com/nashby/xxhash
 
@@ -27,6 +27,7 @@ text = "test"
 seed = 12345
 
 XXhash.xxh32(text, seed) # => 3834992036
+XXhash.xxh64(text, seed) # => 7624679986283906467
 ```
 
 ## Contributing
