@@ -2,6 +2,7 @@
 *.rbc
 **/*.iml
 .idea/
+ruby-xxhash/
 .bundle
 .config
 .yardoc
