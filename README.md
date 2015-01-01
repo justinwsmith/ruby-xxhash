@@ -1,4 +1,4 @@
-# XXhash
+# XXhash  [![Build Status](https://travis-ci.org/justinwsmith/ruby-xxhash.svg?branch=master)](https://travis-ci.org/justinwsmith/ruby-xxhash)
 
 This gem provides a pure Ruby implementation of the XXhash32 and XXhash64 hashing algorithms described here: https://code.google.com/p/xxhash/.
 
