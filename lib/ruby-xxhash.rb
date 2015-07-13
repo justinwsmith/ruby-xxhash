@@ -1,8 +1,10 @@
 # Copyright 2014 Justin W. Smith
 
 require "ruby-xxhash/version"
+require "digest"
 require "ruby-xxhash32"
 require "ruby-xxhash64"
+
 
 module XXhash
   def self.xxh32(input, seed = 0)
